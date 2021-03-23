@@ -1,10 +1,24 @@
+# Introduction to Python Data Types and Operators
 
+- Strings
+- Numbers Integers > Floats, Longs
+- Boolean (True or False)
+
+### Arithmetic Operators
+### Comparison Operators
+
+- Arithmetic Operators
+```python
++, -, *, /
+```
+- Modulus
+`%` It gives the remainder of the 2 numbers
 
 - Comparison Operators
 - `>` greater than
 - `<` less than
-- `>=` 
-- `==`
+- `>=` less equal
+- `==` equal
 - `!=` not equal 
 
 ## Strings & Casting
@@ -16,6 +30,20 @@ reverse indexing in Python starts from -1
 - `11 01 9 8 7 6 5 4 3 2 1 0`
 
 ### String methods
+- `len()`
+- `.strip()`
+- `.upper()`
+- `.lower()`
+- `.capitalize()`
+- `.replace()`
+
+### Concatenation
+- String concatenation means add strings together.
+- Use the + character to add a variable to another variable:
+```python
+x = "Python is "
+y = "awesome"
+z =  x + y
+print(z)
 ```
 
-```

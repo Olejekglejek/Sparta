@@ -38,3 +38,14 @@ print(Example_text.upper())  # upper case
 print(Example_text.lower())  # lower case
 print(Example_text.capitalize())  # capitalize first letter
 print(Example_text.replace("with", ","))  # replace
+
+# Concatenation and Casting
+First_Name = 'Oleg'
+Last_Name = 'Stalone'
+age = 99  # int
+print(First_Name + ' ' + Last_Name + ' ' + str(age))  # cast integer into str
+print(First_Name, Last_Name, age)
+
+# F - string formating
+print(f"{First_Name} {Last_Name} is {age} old")
+print(f"{First_Name=}")
