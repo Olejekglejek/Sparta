@@ -77,3 +77,34 @@ for items in food_bill.values():
 for items in food_bill.values():
 	print(items['name'], items['bill'])
 ```
+- Neste loops
+```python
+for item in food_bill.values():
+	#Nested loop to iterate through the nested dict ot get the value
+	for bill in item.values():
+		print(bill)
+```      
+
+### While loop
+- What is?
+
+`While` is one of the 2 primitive loop commands.
+- Where we use it?
+
+With the `while` loop we can execute a set of statements as long as a condition is true.
+- Use cases examples
+```python
+#first iteration
+num = 0
+while num  < 10:  #while true continue, if false stop
+	print(f"its working -> {num}")
+	num += 1
+
+#second iteration
+num = 0
+while num  < 10:  #while true continue, if false stop
+	print(f"its working -> {num}")
+	if num == 4:
+		break
+	num += 1
+```

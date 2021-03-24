@@ -56,23 +56,58 @@
 # 		break # when milk is found in the items, the iterating stops (get out of the loop)
 
 #lets create a dictionary of our food bill so we can iterate with for loop
-food_bill = {
-	1: {'name': 'James',
-	'bill': '1$'},
-	2: {'name': 'Bond',
-	'bill': '2$'},
-	3: {'name': 'oleg',
-	'bill': '3$'}
-}
+# food_bill = {
+# 	1: {'name': 'James',
+# 	'bill': '1$'},
+# 	2: {'name': 'Bond',
+# 	'bill': '2$'},
+# 	3: {'name': 'oleg',
+# 	'bill': '3$'}
+# }
 
 #lets iterate through out dict
-for items in food_bill.keys():
-	print(items)
-for items in food_bill.values():
-	print(items)
+# for items in food_bill.keys():
+# 	print(items)
+# for items in food_bill.values():
+# 	print(items)
 
 #print the names with the bill amount for each person
 # James and the amount for James
 
-for items in food_bill.values():
-	print(items['name'], items['bill'])
+# for items in food_bill.values():
+# 	print(items['name'], items['bill'])
+
+# for item in food_bill.values():
+	#Nested loop to iterate through the nested dict ot get the value
+	# for bill in item.values():
+	# 	print(bill)
+
+# While loop
+# Syntax while condition value :
+#		action
+#first iteration
+# num = 0
+# while num  < 10:  #while true continue, if false stop
+# 	print(f"its working -> {num}")
+# 	num += 1
+
+#second iteration
+# num = 0
+# while num  < 10:  #while true continue, if false stop
+# 	print(f"its working -> {num}")
+# 	if num == 4:
+# 		break
+# 	num += 1
+
+#third iteration
+
+user_prompt = True
+while user_prompt:
+	age = input('Please enter your age: ')	
+	if age.isdigit():
+		user_prompt = False
+	else:
+		print('Please enter Your age in digits')
+print(f'Your age is {age}') # this line of code only gets executed only if the user input digits
+
+# Ensure the loop condition has a condition to meet
