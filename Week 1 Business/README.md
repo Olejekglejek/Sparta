@@ -5,13 +5,10 @@
 Hello, My name is Oleg
 
 I am a graduate electrical engineer
-My journey in the technology world started back when I was little. 
-At that time I didn't even have a computer, and I used to save every coin in order to go to a computer club.
-My invite to the world of technology was through video games.
-When I got my first computer I use to break it a lot trying to upgrade and exploit every feature and also squeeze every bit of performance for the games.
+My journey in the technology world started back when I was little. At that time I didn't even have a computer, and I used to save every coin in order to go to a computer club. My invite to the world of technology was through video games.When I got my first computer I use to break it a lot trying to upgrade and exploit every feature and also squeeze every bit of performance for the games.
 I was the IT guy of my family, friends, and relatives when something needed to be fixed or improved.
 
-When it came to choosing a university path, I didn't have a full understanding of what an engineer was but I definitely knew which part of the world is worth it and interesting for me to explore.
+When it came to choosing a university path, I didn't have a full understanding of what an engineer was but I definitely knew which part of the world is worth and would be interesting for me to explore.
 Starting the university I already had some foundation in programming.
 I still remember the Pascal language.
 and electronics which helped me not destroy too many computers while trying to fix or upgrade them.
@@ -58,23 +55,45 @@ One of my weaknesses is probably that I am still shy and it might take quite som
 I would always wait for an invite or call before joining any kind of activity.
 But during my education years, I went through a lot of experiences where I had to speak in public, make presentations, lead teams, take initiative, collaborate with a lot of people which helped me to minimize a lot of this aspect.
 
-Second I think I am a lazy person. There were so many when I thought that I will always have time to finish a project later and I end up in the last week finishing up the work for some months. 
-I started to look for more information about why is this happening cause it was a problem for most of my colleagues and I found out the this is embedded in our DNA. Our brain doesn't like to work on hard projects because it's very resourceful and by using our body is built to conserve any kind of energy.
+Second I think I am a lazy person. There were so many times when I thought that I will always have time to finish a project later and I end up in the last week finishing up the work for some months. 
+I started to look for more information about why is this happening cause it was a problem for most of my colleagues and I found out the this is embedded in our DNA. Our brain doesn't like to work on hard projects because it's very resourceful and by design out body is built to conserve any kind of energy.
 But in the same books, I found the tools which can help us deal with these issues and forget about procrastination.
 Some of those tools are time management, Pomodoro technique.
+Thats how I arrived to like studying psycology, and everything related to brain and human behavior.
 
-Third I have sometimes a unwanted sense of a perfectionism. For example sometimes I spend too much time on minor things like playing with the design of a button or navbar. I said unwanted because I 
+Third I have sometimes an unwanted sense of a perfectionism. For example sometimes I spend too much time on minor things like playing with the design of a button or navbar. I said unwanted because most of the time we work with deadlines and every minute counts. But during university I learned about Pareto Principle and other tools which helped me to do most of the job with less effort and time and only later focus on details.
 
 9. **3 Strengths**
 
+Some of my strenghts are Flexibility, I can quickly adapt to changes, can quickly learn new procedures, and most importantly, take on these new changes in an optimistic manner.
 
+I am Team Oriented but also Self-Motivated which helps me to develop the ability to work alone under presure, while enjoying working with groups of people. I am very disciplined without having the need to have presence of a supervisor, to remind about me responsabilities altough I love to be in a enviroment of smart people with more experience and knowledge then me, constantly makeing room for improvement for me.
+
+I am a Problem-solver, love to think about elegant solution to every problem. I developed this skill from a very young age playing chess, solving riddles and all sorts of mind-bending challenges.
 
 10. **Can you tell me more about your final thesis?**
 
-
+Sure, I've build a Surveilance system base on artificial inteligence. As hardware I used a raspberry pi with its camera module and a doppler radar. The logic was collecting the objects which the neural network can recognize with the camera module, the result of the detection could be send as a notification to our mobile phone using IFTTT service. Next we have the functionality to verify the video stream using RaspController app. In case we have a valid detection we have the funcitonality to control our Rpi with help of Telegram Bots by sending text messages. Example of output could be any periferial action, Servo Motor, leds, audio output. In case the object is not in the view area of the cammera module I have implemented a doppler radar which can detect movement at 360 and report in the same manner.
 
 11. **How could you benefit the company?**
 
+I will bring my unique visioning ability to your company. I am experienced in many areas related to this company’s current goals,
+I can contribute my ability to
+My previous work experience includes innovation in many areas, including
+At my previous company, I devised strategies for improving teamwork and communication among members of team projects. I can bring to your organization not only my ideas from my previous job, but my general passion for innovation too.
+Example 1: Administrative assistant
+"I excel at multi-tasking in a fast-paced office environment. At my previous job, I managed four executives' schedules and assisted the office manager by opening the office every day, among other tasks as needed. I can do the same job every day, and I can be flexible with a list of different daily tasks that I am handed when I get to work. One of the reasons I applied for this job is because I have been impressed with the culture of productivity and passion for the products you sell. I know I can be a valuable support resource to allow you to prioritize your workload."
 
+Example 2: Project manager
+"The last project I worked on at my previous job was the creation of a mobile application that integrated meal planning and supermarket shopping lists. It started out as my simple idea and evolved into a team of eight working on it. We beat our submission deadline by two weeks, and shortly after launch, our application was discussed on an influential cooking podcast. We saw our downloads quadruple that week. I helped our team meet and exceed every deadline and goal, and I believe I can bring that same kind of motivation to this cookbook project."
+
+Example 3: Salesperson
+"I discovered how much I love sales during the last year when I was promoted to be a member of the traveling sales team at my last company. After the first six months, I was given the Top Regional Sales Award for signing new clients. Though I enjoyed the challenges of traveling to meet customers in many different locations, I look forward to establishing relationships with some local contacts and offering them my focused efforts. I have used your company's products for years and can give strong testimonials from experience."
 
 12. **What are 3 areas of improvement for you?**
+
+Technical skills - i constantly study, and working
+
+Leadership skills, to take more initiative
+
+Presentation skills and how I work on it
