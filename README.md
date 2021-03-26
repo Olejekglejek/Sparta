@@ -322,3 +322,166 @@ As a user, I can user the run_factory with water and flour and get naan.
 * code has exit condition
 * DOD if followed
 
+
+#########################################################
+# Control Flow Age and Permission
+
+## Timings
+
+30 Minutes
+
+## Summary
+
+Simple program to use control flow!
+
+## Tasks
+
+* rules of what the program is supose to do are followed,see bellow
+
+Starter code
+```
+age = 19
+driver_lisence = True
+
+
+# - You can vote and drive
+# - You can vote
+# - You can driver
+# - you can't legally drink but your mates/uncles might have your back (bigger 16)
+# - Your too young, go back to school!
+
+
+ #  as a user I should be able to keep being prompted for input until I say 'exit'
+
+```
+
+## Acceptance Criteria
+
+* is a program that run continuously
+* handles strings and integers
+* has exist condition
+* all business logic works
+-----------------------------------------------------------------
+# Your Hero Story!
+
+## Timings
+
+30-50 Minutes
+
+## Summary
+
+Your going to write a story, cut it into section, store the section in a python dictionary!
+
+## Tasks
+
+* define a dictionary
+* add your content as values for keys
+* follow the instruction in the pseudo code bellow:
+
+```
+# Dictionary basics :D
+
+#1 - Define a dictionary call story1, it should have the following keys:
+        # 'start', 'middle' and 'end'
+
+#2 - Print the entire dictionary
+
+#3 - Print the type of your dictionary
+
+#4 - Print only the keys
+
+#5 - print only the values
+
+#6 - print the individual values using the keys (individually, lots of print commands)
+
+#7 - Now let's add a new key:value pair.
+    # 'hero': yourSuperHero
+```
+
+## Acceptance Criteria
+
+* all 7 tasks are done
+* runs with no errors
+* tell a story
+--------------------------------------------------------------------
+# Control Flow Age and Permission
+
+## Timings
+
+30 Minutes
+
+## Summary
+
+Simple program to use control flow!
+
+## Tasks
+
+* rules of what the program is supose to do are followed,see bellow
+
+Starter code
+```
+age = 19
+driver_lisence = True
+
+
+# - You can vote and drive
+# - You can vote
+# - You can driver
+# - you can't legally drink but your mates/uncles might have your back (bigger 16)
+# - Your too young, go back to school!
+
+
+ #  as a user I should be able to keep being prompted for input until I say 'exit'
+
+```
+
+## Acceptance Criteria
+
+* is a program that run continuously
+* handles strings and integers
+* has exist condition
+* all business logic works
+-----------------------------------------------------------------
+# Your Hero Story!
+
+## Timings
+
+30-50 Minutes
+
+## Summary
+
+Your going to write a story, cut it into section, store the section in a python dictionary!
+
+## Tasks
+
+* define a dictionary
+* add your content as values for keys
+* follow the instruction in the pseudo code bellow:
+
+```
+# Dictionary basics :D
+
+#1 - Define a dictionary call story1, it should have the following keys:
+        # 'start', 'middle' and 'end'
+
+#2 - Print the entire dictionary
+
+#3 - Print the type of your dictionary
+
+#4 - Print only the keys
+
+#5 - print only the values
+
+#6 - print the individual values using the keys (individually, lots of print commands)
+
+#7 - Now let's add a new key:value pair.
+    # 'hero': yourSuperHero
+```
+
+## Acceptance Criteria
+
+* all 7 tasks are done
+* runs with no errors
+* tell a story
+--------------------------------------------------------------------
+
