@@ -6,6 +6,7 @@ class Python(Snake):
         super().__init__()
         self.large = True
         self.two_lungs = True
+        self.venom = False  # Polimorfism, overriding the methods and atributes
 
     def climb(self):
         return 'up we go..'

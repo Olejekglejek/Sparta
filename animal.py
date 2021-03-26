@@ -26,5 +26,6 @@ class Animal():
 cat = Animal()  # this will store all the data and methods of Animal class into cat
 print(cat.eat())  # eat() is now abstracted
 
-# Lets move on to inheritance
-
+oriental_long_hair = Animal()
+oriental_long_hair.lungs = False  # Polymorfism examlple
+print(oriental_long_hair.lungs)
