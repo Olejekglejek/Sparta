@@ -32,7 +32,17 @@
 # ## Acceptance Criteria
 def xmas_list():
     gift_list = []
-    
+    loop = True
+    while loop:
+        gift = input('Add a gift to the list: ')
+        if(gift.upper() != "EXIT"):
+            gift_list.append(gift)
+        else:
+            loop = False
+            for gift in gift_list:
+                print(f"{gift_list.index(gift)} - {gift.upper()}")
+
+
 xmas_list()
 # * All user stories are completed
 # * Has documentation
