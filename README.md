@@ -195,6 +195,7 @@ def fizzbuzz():
 fizzbuzz()
 
 #other Solutions
+# 1.
 for i in range(1, 101):
     if i%3 == 0 and i%5 == 0:
         print('FizzBuzz')
@@ -204,7 +205,7 @@ for i in range(1, 101):
         print('Buzz')
     else:
         print(i)
-
+# 2.
 for i in range(1, 101):
     output=''
     if i%3==0:
@@ -599,24 +600,32 @@ Your going to write a story, cut it into section, store the section in a python 
 - add your content as values for keys
 - follow the instruction in the pseudo code bellow:
 
-```
+``` python
 # Dictionary basics :D
 
 #1 - Define a dictionary call story1, it should have the following keys:
         # 'start', 'middle' and 'end'
-
+story1 = {
+    'start':'something',
+    'middle': 'something',
+    'end': 'something'
+}
 #2 - Print the entire dictionary
-
+print(story1)
 #3 - Print the type of your dictionary
-
+print(type(story1))
 #4 - Print only the keys
-
+print(story1.keys())
 #5 - print only the values
-
+print(story1.values())
 #6 - print the individual values using the keys (individually, lots of print commands)
-
+print(story1['start'])
+print(story1['middle'])
+print(story1['end'])
 #7 - Now let's add a new key:value pair.
     # 'hero': yourSuperHero
+# ```
+story1['hero'] = 'Batman'
 ```
 
 ## Acceptance Criteria
