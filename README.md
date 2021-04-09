@@ -2,3 +2,5 @@
 - install Flask
 `pip install flask`
 - create a file called `app.py`
+
+![](flask.png)
