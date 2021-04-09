@@ -69,3 +69,5 @@ The stock department may have numerous requirements and it makes sense to contai
 Create two files `nw_products.py` & `nw_runner.py` and then we will move into creating our object.
 
 APPLY OOP - DRY CRUD WHERE POSSIBLE
+
+![](http.png)

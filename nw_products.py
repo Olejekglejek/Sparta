@@ -19,7 +19,7 @@
 # Create two files `nw_products.py` & `nw_runner.py` and then we will move into creating our object.
 
 # APPLY OOP - DRY CRUD WHERE POSSIBLE
-class Stock():
+class NwProducts():
     def __init__(self):
         import pyodbc
         self.server = "IP ADress"

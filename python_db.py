@@ -35,4 +35,4 @@ while True:
     print(record.UnitPrice)
 
 # to close connection northwind_database.close()
-northwind_database.close()
+docker_Northwind.close()
