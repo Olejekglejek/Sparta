@@ -26,3 +26,4 @@ class CaclTest(unittest.TestCase):
     def test_divide(self):
         self.assertEqual(self.calc.divide(8, 4), 2)
         # This test the values as 8/4=2 if True
+# pytest looks for any file wtih name including test.*.py
