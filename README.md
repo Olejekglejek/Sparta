@@ -31,3 +31,7 @@ num_float = 23.6
 print(math.ceil(num_float)) # if number .5 round it up
 print(math.floor(num_float)) # if number .4 or less round it down
 ```
+### Package vs Modules
+
+Any Python file is a [module](https://docs.python.org/3/tutorial/modules.html), its name being the file's base name without the `.py` extension. A [package](https://docs.python.org/3/tutorial/modules.html#packages) is a collection of Python modules: while a module is a single Python file, a package is a directory of Python modules containing an additional `__init__.py` file, to distinguish a package from a directory that just happens to contain a bunch of Python scripts. Packages can be nested to any depth, provided that the corresponding directories contain their own `__init__.py` file.
+[useful link](https://realpython.com/python-modules-packages/)
