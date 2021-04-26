@@ -38,6 +38,8 @@ Cloud computing makes data backup, disaster recovery and business continuity eas
 
 Many cloud providers offer a broad set of policies, technologies and controls that strengthen your security posture overall, helping to protect your data, apps and infrastructure from potential threats.
 
+![](Cloud.png)
+
 ## Types of cloud computing
 
 Not all clouds are the same and not one type of cloud computing is right for everyone. Several different models, types and services have evolved to help offer the right solution for your needs.
@@ -55,6 +57,8 @@ A private cloud refers to cloud computing resources used exclusively by a single
 - Hybrid cloud
 
 Hybrid clouds combine public and private clouds, bound together by technology that allows data and applications to be shared between them. By allowing data and applications to move between private and public clouds, a hybrid cloud gives your business greater flexibility, more deployment options and helps optimise your existing infrastructure, security and compliance.
+
+![](HybridCloud.png)
 
 ## Types of cloud services: IaaS, PaaS, serverless and SaaS
 
@@ -82,30 +86,83 @@ You’re probably using cloud computing right now, even if you don’t realise i
 
 Here are a few examples of what’s possible today with cloud services from a cloud provider:
 
-- Create cloud-native applications
+- **Create cloud-native applications**
 
 Quickly build, deploy and scale applications – web, mobile and API. Take advantage of cloud-native technologies and approaches, such as containers, Kubernetes, microservices architecture, API-driven communication and DevOps.
 
-- Test and build applications
+- **Test and build applications**
 
 Reduce application development cost and time by using cloud infrastructures that can easily be scaled up or down.
 
-- Store, back up and recover data
+- **Store, back up and recover data**
 
 Protect your data more cost-efficiently – and at massive scale – by transferring your data over the Internet to an offsite cloud storage system that’s accessible from any location and any device.
 
-- Analyse data
+- **Analyse data**
 
 Unify your data across teams, divisions and locations in the cloud. Then use cloud services, such as machine learning and artificial intelligence, to uncover insights for more informed decisions.
 
-- Stream audio and video
+- **Stream audio and video**
 
 Connect with your audience whenever, wherever, on any device with high-definition video and audio with global distribution.
 
-- Embed intelligence
+- **Embed intelligence**
 
 Use intelligent models to help engage customers and provide valuable insights from the data captured.
 
-- Deliver software on demand
+- **Deliver software on demand**
 
 Also known as software as a service (SaaS), on-demand software lets you offer the latest software versions and updates around to customers – whenever they need it, regardless of where they are.
+
+# (security group works as firewall for instance on machine)
+
+## Devops 4 pillars
+
+- Ease of use (easy to use, automated)
+- Flexibility (scalable)
+- Robustness (strong, secure, eficient)
+- Cost (economical)
+
+## For file transfer with `scp` command
+
+scp -i ~/.ssh/DevOpsStudent.pem /home/oleg/Desktop/'what is devops' ubuntu@54.74.232.5:/home/ubuntu
+
+## For folder transfer with `scp` command use `-r` flag
+
+`scp -ri <pem file path> <file/folder path> ubuntu@<ip only (withot http and slashes)>:<path>`
+
+# How to create an
+
+Create VPC
+
+Create public sub-net
+
+Create app
+Make app work in new VPC
+
+\***\*\*\*\*\***\*\*\***\*\*\*\*\***88
+NACL - Extra level of security
+AMI - provides information to launch instance
+Needs to work after security
+
+# FAQ
+
+## How to transfer folder/file from local to cloud instance?
+
+**using `scp` command**
+
+1. Open terminal (for Mac and Linux users) or Bash sheel (for Windows users)
+2. Use this structure `scp -ri <pem file path> <file/folder path> ubuntu@<ip only (withot http and slashes)>:<path on your cloud instance>`
+
+_example._
+
+scp -i ~/.ssh/DevOpsStudent.pem /home/johndoe/Desktop/app ubuntu@10.10.110.1:/home/ubuntu
+
+**cloning the repo from online repository**
+
+1. Open terminal (for Mac and Linux users) or Bash sheel (for Windows users)
+2. Clone the repo into your cloud instance using _http_ protocol
+
+`git clone https://github.com/johndoe/online_repo.git`
+
+sudo echo "export DB_HOST=mongodb://db_private_ip:27017/posts" >> ~/.bashrc
