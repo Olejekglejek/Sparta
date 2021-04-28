@@ -131,7 +131,7 @@ scp -i ~/.ssh/DevOpsStudent.pem /home/oleg/Desktop/'what is devops' ubuntu@54.74
 
 `scp -ri <pem file path> <file/folder path> ubuntu@<ip only (withot http and slashes)>:<path>`
 
-# How to create an
+# How to create an VPC
 
 Create VPC
 

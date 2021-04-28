@@ -1,5 +1,7 @@
 ## AWS VPC configuration with Subnets
 
+![](AWSDiagram.jpg)
+
 ### Step 1: Create the VPC
 
 1. Click `Your VPCs`, then `Create VPC`

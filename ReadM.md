@@ -195,3 +195,53 @@ To solve this we need to create a bastion server, also known as a jump box so th
 - Create a security group that only allows access on port 22 from your IP
 - Create a security group called bastion-access that only allows ssh access from the bastion group
 - SSH to your bastion server and from there SSH to your database instance
+
+### What is S3
+
+- what is aws S3
+- uses cases
+- who is using S3
+- set up s3, dependencies
+- configure AWS CLI
+- how can we get the authentication done to talk with S3
+- we will apply crud
+- S3: you will have a backup available to apply CRUD in the console of AWS
+
+  **we need running EC2 to ssh into the instance and AWS access and secret**
+
+- S3 is a Simple storage service provided by AWS
+- It is used to store and retrieve any amount of data, at anytime, from around the world
+- We can also host our static website on S3
+
+- Create a bucket from AWSCLIT
+- upload data
+- download data
+- delete data
+- permissons of the bucket
+
+- In order have AWSCLI we need to install the required dependencies
+- Python
+- pip
+- Configure the AWSCLI with AWS keys to authenticate the access from our machine to S3
+
+- `aws s3 sync s3://eng84shahrukhs3 README.md` to download the data from our S3 bucket
+
+AWS CLI reference:
+
+```
+aws s3
+
+aws s3 cp to copy data from your instance to S3 bucket
+
+aws s3 mb make bucket
+
+aws s3 mv move
+
+aws s3 ls list files
+
+aws s3 rb remove bucket
+
+aws s3 rm remove file/data
+
+aws s3 sync download data
+```
