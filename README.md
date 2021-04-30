@@ -1,6 +1,6 @@
 # CI-CD with Jenkins
 
-### Build CI with Jenkins and GitHub
+### Build CI/CD with Jenkins and GitHub
 
 ![](assets/jenkins.png)
 
