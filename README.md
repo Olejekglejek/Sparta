@@ -328,3 +328,5 @@ We will deploy our application on an EC2 instance.
 8. The posts page will open with `development.local:3000/posts`
 
 **test the CI/CD pipeline**
+**test 2**
+
