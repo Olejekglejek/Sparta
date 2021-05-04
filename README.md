@@ -326,6 +326,3 @@ We will deploy our application on an EC2 instance.
 6. Execute `node app.js` to run the app
 7. On a web browser, enter `development.local:3000` to show that the app is _working_
 8. The posts page will open with `development.local:3000/posts`
-
-**test the CI/CD pipeline**
-test
