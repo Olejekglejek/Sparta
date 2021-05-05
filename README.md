@@ -194,3 +194,43 @@ https://docs.ansible.com/ansible/2.9/user_guide/vault.html
 ```
 
 - `ansible-playbook install_mongodb.yaml`
+- `sudo apt-add-repository --yes --update ppa:ansible/ansible`
+- `sudo apt install python3-pip -y`
+- `pip3 install boto boto3`
+
+```
+sudo mkdir group-vars
+cd group-vars/
+sudo mkdir all
+ansible-vault create pass.yml
+add this code with the right credential
+aws_access_key: THISISMYACCESSKEY
+aws_secret_key: THISISMYSECRETKEY
+```
+
+https://docs.ansible.com/ansible/latest/user_guide/guide_rolling_upgrade.html
+
+https://docs.ansible.com/ansible/latest/user_guide/guide_rolling_upgrade.html
+
+- ssh into web server
+- go to `/etc/ssh/`
+- in the `sshd_config` change `PermitRootLogin yes` and `PasswordAuthentication yes`
+- restart ssh `sudo systemctl restart ssh`
+- check status `sudo systemctl status ssh`
+
+```
+Next go to
+cd etc/ssh
+next open sshd_config file
+sudo nano sshd_config
+
+change below permissions
+1. PermitRootLogin yes
+change authentication to yes
+2. PasswordAuthentication yes
+save and exit the file
+restart the ssh service
+sudo systemctl restart ssh
+```
+
+![](assets/1.png)
