@@ -234,3 +234,76 @@ sudo systemctl restart ssh
 ```
 
 ![](assets/1.png)
+
+- ansible-playbook rds_prod.yml --syntax-check
+
+# Setting up Ansible Controller
+
+Setup 3 instances: controller, web and database
+
+## Controller Setup
+
+It can be an EC2 instance on AWS or on localhost with Vagrant
+
+Create and use this `provsion.sh`:
+
+```
+#!/bin/bash
+# run this file in the controller
+
+sudo apt-get update -y
+sudo apt-get install software-properties-common -y
+sudo apt-add-repository ppa:ansible/ansible -y
+sudo apt-get update -y
+sudo apt-get install ansible -y
+
+sudo apt-get install tree
+
+# dependancies for vault
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible -y
+sudo apt install python3-pip -y
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+pip3 install awscli
+pip3 install boto boto3
+```
+
+Make it executable with `chmod +x provision.sh` and run it.
+
+## Creating Instances
+
+Create a playbook with which we can launch 2 instance for web and db.
+
+Setup vault file with this file structure.
+
+```
+mkdir -p AWS_Ansible/group_vars/all/
+cd AWS_Ansible
+touch playbook.yml
+```
+
+Create a file with your credentials:
+
+```
+ansible-vault create group_vars/all/pass.yml
+```
+
+Add these 2 credentials:
+
+```yml
+aws_access_key: THISISMYACCESSKEY
+aws_secret_key: THISISMYSECRETKEY
+```
+
+Using vim:
+hit `i` to edit the file and `ESC` to stop editing.
+After hitting `ESC` type `:wq` and enter to save and quit.
+
+Now we can create the instances with this command.
+
+```
+sudo ansible-playbook instance_setup.yml --ask-vault-pass -t create_ec2
+```
