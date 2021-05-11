@@ -33,40 +33,163 @@ In the Edit System Variable (or New System Variable) window, specify the value o
 - `terraform destroy`
 
 ```
-# Lets initialise terraform
-# Providers : AWS
+# Let's initialise terraform
+# Providers?
+# AWS
 
-# This code will eventually launch and EC2 instance for us
-# Provider is a ketword in Terraform to define the name of cloud provider
+# This code will eventually launch an EC2 instance for us
+
+# provider is a keyword in Terraform to define the name of cloud provider
 
 # Syntax:
 
 provider "aws" {
-  #define the region to launch the ec2 instance in Ireland
-  region = "eu-west-1"
+# define the region to launch the ec2 instance in Ireland
+	region = "eu-west-1"
+}
+
+resource "aws_instance" "app_instance" {
+  # var.name_of_resource loads the value from variable.tf into main.tf
+  ami = var.webapp_ami_id
+
+  #subnet_id = "aws_subnet.testing_subnet.id" # This line to be added after creation of subnet_id
+
+  #vpc_security_group_ids = ["${aws_security_group.shahrukh_terraform_code_test.id}"]
+
+  instance_type = "t2.micro"
+  associate_public_ip_address = true
+  tags = {
+      Name = "${var.name}"
+  }
+  key_name = "ansible" # this key name needs to the as .pem file
+  #aws_key_path = var.aws_key_path
 
 }
-# Launching an EC2 instance from our webapp AMI
-# resource is the keyword that allows us to add aws resource as task in Ansible
+resource "aws_vpc" "terraform_vpc_code_test" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
 
-#Resource block of code
-resource "aws_instance" "app_instance" {
-  # add the AMI id between "" as below
-  ami = "ami-08aaa3dea77ad1b51"
-
-  #Lets add the type of instance we would like to launch
-  instance_type = "t2.micro"
-
-  # Do we need to enable public IP for our APP
-  associate_public_ip_address = true
-  # Tags is to give name to our instance
   tags = {
-    "Name" = "Eng84_oleg_app_4_terraform"
-
+    Name = "shahrukh_terraform_vpc_code_test"
   }
 }
-#Resource block of code ends here
 
+# Let's create a security group for our App instance
+
+# Security group block of code:
+resource "aws_security_group" "shahrukh_terraform_code_test_sg"  {
+  name = "shahrukh_terraform_code_test"
+  description = "app group"
+  vpc_id = "vpc-07e47e9d90d2076da"
+
+# Inbound rules for our app
+# Inbound rules clode block:
+  ingress {
+    from_port       = "80" # for our to launch in the browser
+    to_port         = "80" # for our to launch in the browser
+    protocol        = "tcp"
+    cidr_blocks     = ["0.0.0.0/0"] # allow all
+  }
+  # Inbound rules code block ends
+
+  # Outbound rules clode block:
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1" # allow all
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+  tags  = {
+    Name = "var.name"
+  }
+}
+# security group code block ends
+
+
+
+#resource "aws_subnet" "testing_subnet" {
+
+ # vpc_id = "vpc-07e47e9d90d2076da"
+  #cidr_block = "enter the ip range that fits into your vpc range"
+  #availability_zone = "eu-west-1a"
+  #tags = {
+  #  Name = "var.aws_subnet"
+  #}
+#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Launching an EC2 instance from our Node_app AMI
+# resource is the keyword that allows us to add aws resource
+
+# Resource block of code:
+
+#resource "aws_instance" "app_instance"{
+	# add the AMI id between "" as below
+	#ami = "ami-042af9229265c27d0"
+	#subnet_id = "${aws_subnet.app_subnet.id}"
+	 # This line to be added after creation of subnet_id
+
+	## Let's add the type of instance we would like launch
+	#instance_type = "t2.micro"
+
+        # Do we need to enable public IP for our app
+  #  associate_public_ip_address = true
+    # Tags is to give name to our instance
+    ##tags = {
+   #     Name = "eng84_shahrukh_terraform_node_app"
+  #  }
+#}#
+#
+# #Resource block of code ends here
+
+#r#esource "aws_vpc" "Terraform_vpc_code_test"{
+#	cidr_block = "10.0.0.0/16"
+#	instance_tenancy = "default"
+#
+#	tags = {
+#	  Name = "eng84_terraform_vpc"
+#	}
+#}
+#
+## Creating subnet
+#resource "aws_subnet" "app_subnet" {
+#
+#	vpc_id = "vpc-07e47e9d90d2076da"
+#	cidr_block = "10.0.1.0/24"
+#	availability_zone = "eu-west-1a"
+#
+#	tags = {
+#	   Name = "eng84_shahruh_app_subnet"
+
+#	}
+#}
+
+
+# Resource block of code for VPC ends here
+
+
+
+# terraform init
+# terraform plan
+# terraform apply
+# terraform destroy
 ```
 
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_vpc
@@ -144,4 +267,21 @@ The benefits of a hybrid cloud strategy stem from the solution's ability to give
 Most businesses do not utilize the same level of computation power every day. In fact, an organization may find that its resource needs only balloon during one specific time of year. For instance, a health insurance application may need double the computing power during open enrollment. Rather than paying for those additional resources to sit idle for most of the year, an organization can save on costs by extending their private resources to a public cloud only when necessary.
 
 A hybrid model requires much less space on-premises compared to a strictly private model. A business can deploy a private network on-site to handle internal needs, then automatically extend to the private cloud when computational resources exceed local availability. This model can benefit startups that can't afford to invest in a huge private data center as well as established enterprises
+
 ![](./assets/public_private_hybrid_cloud.png)
+
+```
+Tip for blockers during presentation:
+
+If something goes wrong (bug etc.)
+
+- Engage the audiance by asking them questions about their experiences
+- Tell them a story to keep them engaged.
+```
+
+Exercise:
+FOLLOW THE STEPS THAT WE DID BEFORE IN AWS:
+
+1. CREATE THE VPC
+2. CREATE AND ASSIGN THE SUBNET TO THE VPC
+3. CREATE AN INSTANCE AND ASSIGN TO THE SUBNET
