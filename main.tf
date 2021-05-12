@@ -2,51 +2,79 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-resource "aws_instance" "app_instance" {
-  ami = var.webapp_ami_id
-
-  #subnet_id = "aws_subnet.testing_subnet.id" # This line to be added after creation of subnet_id
-
-  #vpc_security_group_ids = ["${aws_security_group.Oleg_terraform_code_test.id}"] 
-
-  instance_type               = "t2.micro"
-  associate_public_ip_address = true
-  tags = {
-    Name = "${var.name}"
-  }
-  key_name = "ansible" # this key name needs to the as .pem file
-  #aws_key_path = var.aws_key_path
-
-}
-resource "aws_vpc" "terraform_vpc_code_test" {
-  cidr_block       = "10.0.0.0/16"
+# Create a VPC
+resource "aws_vpc" "terraform_vpc" {
+  cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
 
+  enable_dns_support   = true #gives you an internal domain name
+  enable_dns_hostnames = true #gives you an internal host name
   tags = {
-    Name = "Oleg_terraform_vpc_code_test"
+    Name = var.vpc_name
   }
 }
 
-# Let's create a security group for our App instance
+# Create Internet Gateway
+resource "aws_internet_gateway" "terraform_igw" {
+  vpc_id = aws_vpc.terraform_vpc.id
+  tags = {
+    Name = var.igw_name
+  }
+}
 
-# Security group block of code:
-resource "aws_security_group" "Oleg_terraform_code_test_sg" {
-  name        = "Oleg_terraform_code_test"
-  description = "app group"
-  vpc_id      = "vpc-07e47e9d90d2076da"
+#Create Custom Route Table
+resource "aws_default_route_table" "terraform_app_rt" {
 
-  # Inbound rules for our app
-  # Inbound rules clode block: 
+  default_route_table_id = aws_vpc.terraform_vpc.default_route_table_id
+
+
+  route {
+    //associated subnet can reach everywhere
+    cidr_block = "0.0.0.0/0"
+    //CRT uses this IGW to reach internet
+    gateway_id = aws_internet_gateway.terraform_igw.id
+  }
+
+  tags = {
+    Name = "Oleg_terraform_public_rt"
+  }
+}
+
+# Create the Subnet
+resource "aws_subnet" "terraform_public_subnet" {
+  vpc_id     = aws_vpc.terraform_vpc.id
+  cidr_block = "10.0.1.0/24"
+  #availability_zone = "eu-west-1c"
+
+  tags = {
+    Name = var.aws_subnet
+  }
+}
+
+# Associate route tables with subnets
+resource "aws_route_table_association" "a1" {
+  subnet_id      = aws_subnet.terraform_public_subnet.id
+  route_table_id = aws_vpc.terraform_vpc.default_route_table_id
+}
+
+
+# Create security group Assign the subnet to the VPC
+resource "aws_security_group" "pub_sec_group" {
+  name        = "Oleg_terraform_sg_app"
+  description = "app security group"
+  vpc_id      = aws_vpc.terraform_vpc.id
+
+  # Inbound rules for webapp
+  # Inbound rules code block:
   ingress {
     from_port   = "80" # for our to launch in the browser
     to_port     = "80" # for our to launch in the browser
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # allow all   
+    cidr_blocks = ["0.0.0.0/0"] # allow all
   }
   # Inbound rules code block ends
 
-  # Outbound rules clode block:
-
+  # Outbound rules code block
   egress {
     from_port   = 0
     to_port     = 0
@@ -55,91 +83,82 @@ resource "aws_security_group" "Oleg_terraform_code_test_sg" {
   }
 
   tags = {
-    Name = "var.name"
+    Name = var.aws_sg_name
   }
+  # Outbound rules code block ends
 }
-# security group code block ends
 
-
-
-#resource "aws_subnet" "testing_subnet" {
-
-# vpc_id = "vpc-07e47e9d90d2076da"
-#cidr_block = "enter the ip range that fits into your vpc range"
-#availability_zone = "eu-west-1a"
-#tags = {
-#  Name = "var.aws_subnet"
-#}
-#}
-
-
-
-
-
-
-
-
+resource "aws_security_group_rule" "my_ssh" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  cidr_blocks       = [var.my_ip]
+  security_group_id = aws_security_group.pub_sec_group.id
+}
+resource "aws_security_group_rule" "vpc_access" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = [var.vpc_cidr]
+  security_group_id = aws_security_group.pub_sec_group.id
+}
 
 
 
 
+# Create and assign an instance to the subnet
+resource "aws_instance" "app_instance" {
+  # add the AMI id between "" as below
+  ami = var.webapp_ami_id
+
+  # Let's add the type of instance we would like launch
+  instance_type = "t2.micro"
+  #The key_name to ssh into instance
+  key_name = var.aws_key_name
+  #aws_key_path = var.aws_key_path
+
+  # Subnet
+  subnet_id = aws_subnet.terraform_public_subnet.id
+
+  # Security group
+  vpc_security_group_ids = [aws_security_group.pub_sec_group.id]
+
+  # Do we need to enable public IP for our app
+  associate_public_ip_address = true
+
+  # Tags is to give name to our instance
+  tags = {
+    Name = "${var.webapp_name}"
+  }
+
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("${var.aws_key_path}") #var.aws_key_path "${file("${var.PRIVATE_KEY_PATH}")}"
+    host        = self.public_ip
+  }
+
+  provisioner "file" {
+    source      = "./scripts/app/init.sh"
+    destination = "/tmp/init.sh"
+  }
+
+  # Change permissions on bash script and execute.
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/init.sh",
+      "bash /tmp/init.sh",
+    ]
+  }
+
+
+}
+
+# data "template_file" "app_init" {
+#   template = file("./scripts/app/init.sh")
+# }
 
 
 
-
-
-# Launching an EC2 instance from our Node_app AMI
-# resource is the keyword that allows us to add aws resource
-
-# Resource block of code:
-
-#resource "aws_instance" "app_instance"{
-# add the AMI id between "" as below
-#ami = "ami-042af9229265c27d0"
-#subnet_id = "${aws_subnet.app_subnet.id}"
-# This line to be added after creation of subnet_id
-
-## Let's add the type of instance we would like launch
-#instance_type = "t2.micro"
-
-# Do we need to enable public IP for our app
-#  associate_public_ip_address = true
-# Tags is to give name to our instance
-##tags = {
-#     Name = "eng84_Oleg_terraform_node_app"
-#  } 
-#}#
-#
-# #Resource block of code ends here
-
-#r#esource "aws_vpc" "Terraform_vpc_code_test"{
-#	cidr_block = "10.0.0.0/16"
-#	instance_tenancy = "default"
-#
-#	tags = {
-#	  Name = "eng84_terraform_vpc"
-#	}
-#}
-#
-## Creating subnet
-#resource "aws_subnet" "app_subnet" {
-#	
-#	vpc_id = "vpc-07e47e9d90d2076da"
-#	cidr_block = "10.0.1.0/24"
-#	availability_zone = "eu-west-1a"
-#	
-#	tags = {
-#	   Name = "eng84_Oleg_app_subnet"
-
-#	}
-#}
-
-
-# Resource block of code for VPC ends here
-
-
-
-# terraform init
-# terraform plan
-# terraform apply
-# terraform destroy

@@ -13,7 +13,7 @@ variable "tag_name" {
 
 variable "webapp_ami_id" {
 
-  default = "ami-08aaa3dea77ad1b51"
+  default = "ami-0f79ddc3f7a4cee74"
 }
 
 variable "aws_subnet" {
@@ -23,14 +23,37 @@ variable "aws_subnet" {
 
 variable "aws_key_name" {
 
-  default = "name of your file"
+  default = "eng84devops"
 }
 
 variable "aws_key_path" {
 
-  default = "~/.ssh/DevOpsStudent.pem"
+  default = "/home/oleg/.ssh/eng84devops.pem"
 }
 
 variable "aws_region" {
   default = "eu-west-1"
+}
+
+variable "vpc_name" {
+  default = "Eng84_Oleg_terraform_vpc"
+}
+
+variable "aws_sg_name" {
+  default = "Eng84_Oleg_terraform_sg"
+}
+
+variable "webapp_name" {
+  default = "Eng84_oleg_terraform_webapp_auto"
+}
+
+variable "my_ip" {
+  default = "81.107.194.131/32"
+}
+
+variable "vpc_cidr" {
+  default = "10.0.0.0/16"
+}
+variable "igw_name" {
+  default = "Eng84_oleg_terraform_igw"
 }
