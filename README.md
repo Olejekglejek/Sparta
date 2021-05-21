@@ -1,8 +1,5 @@
 # IT Jobs Watch Data
 
-# JOSE TEST
-
-
 ## Introduction
 The aim of this project is to create a simple service that can scrape useful data from ITJobswatch.
 
