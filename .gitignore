@@ -3,3 +3,7 @@
 .terraform*
 *.tfstate*
 
+# Python files
+__pycache__
+.python-version
+

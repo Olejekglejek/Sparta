@@ -2,7 +2,7 @@
 
 ## Contents
 - [Kubernetes](#kubernetes)
-- [Jenkins](#jenkins)
+- [Portainer](#portainer)
 - [References](#references)
 ## Tools
 - Terraform
@@ -32,7 +32,7 @@ sudo add-apt-repository \
 
 sudo apt-get install -y docker-ce
 
-#install kubelet, kubeadm and kubectl
+#install kubelet, kubeadm and kubecul
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -87,3 +87,4 @@ kubectl taint node <node-name> node-role.kubernetes.io/master:NoSchedule-
 - [Installing kubeadm](https://v1-18.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
 - [Creating a cluster with kubeadm](https://v1-18.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 - [Cluster Networking solutions](https://v1-18.docs.kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model)
+- [Install Helm](https://helm.sh/docs/intro/install/)
