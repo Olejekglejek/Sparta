@@ -15,7 +15,7 @@ resource "aws_security_group" "alexis_sg_public"{
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = ["5.226.137.14/32"] 
+    cidr_blocks = ["51.19.86.247/32"] 
   }
   ingress {
     from_port = 0 

@@ -3,6 +3,7 @@
 resource "aws_instance" "master_node" {
   ami = "ami-0943382e114f188e8"
   instance_type = "t3.small"
+  private_ip = "12.1.1.11"
   subnet_id = aws_subnet.alexis_subnetA.id
 
   key_name = "eng84devops"
@@ -27,7 +28,7 @@ resource "aws_instance" "master_node" {
   }
   provisioner "remote-exec" {
     inline = [
-        "echo ALB_DNS=${aws_lb.alexis_lb.dns_name} >> /etc/environment"
+        "echo export ALB_DNS=${aws_lb.alexis_alb.dns_name} | sudo tee -a /etc/profile"
     ]
     connection {
       type = "ssh"
@@ -38,7 +39,7 @@ resource "aws_instance" "master_node" {
     }
   }
   provisioner "remote-exec" {
-    script = "../provision.sh"
+    script = "../single_node.sh"
     connection {
       type = "ssh"
       user = "ubuntu"
@@ -47,6 +48,7 @@ resource "aws_instance" "master_node" {
       private_key = file(pathexpand("~/docs/imp/wrk/sparta_global/aws/eng84devops.pem"))
     }
   }
+  depends_on = [aws_lb.alexis_alb]
 }
 
 

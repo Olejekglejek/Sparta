@@ -29,5 +29,7 @@ variable "default_rt_name" {
     default = "eng84_final_project_default_rt"
 }
 
-
-
+# Security Groups
+variable "security_group_name_public" {
+    default = "eng84_final_project_sg_public"
+}
