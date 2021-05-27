@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -25,33 +24,28 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-service
+  name: flask-svc
 spec:
-  #type: NodePort
+  # type: NodePort
   selector:
     app: flask-app
   ports:
-    - protocol: TCP
+    - protocol:
       port: 80
       targetPort: 8000
+
 ---
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: http-flask
-  namespace: default
+  name: flask-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - http:
       paths:
       - path: /
-        pathType: Prefix
         backend:
-          service:
-            name: flask-service
-            port:
-              number: 8080
-
-
+          serviceName: flask-svc
+          servicePort: 80
