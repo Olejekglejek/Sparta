@@ -1,0 +1,52 @@
+<<<<<<< HEAD
+# solution code
+# This is our Docker-compose.yml to create a Docker Development Environment
+
+version: '3'
+# docker-compose version should be installed along with docker
+
+services:
+# define our app as a service
+# BE MINDFUL OF INTENDATION as its yaml file, use spaces not a tab to give gap
+   
+   app:
+# app name should be same as your app-name, in our case the actual name is "app"
+      
+      build .
+# Here we telling docker compose to build our app from the Dockerfile we created to build or node app
+      
+      image: ahskhan/node-app-dockerised
+# You can give any name to your image but ensure it matches your Repo on docker so you can push it later
+      
+      volumes:
+      - ./app:usr/src/app
+# We are creating a volume from our app directory and mounting it to our WORKDIR that we defined in our Dockerfile
+
+      ports:
+      - 88:80
+# mapping the port as normal
+# Note: Dockerfile and docker-compose.yml should be in app dir
+docker-compose build --no-cache
+docker-compose up
+
+# Now if we make any changes on the fly... to our app and re-run docker-compose build and view the page it'll show the changes 
+# Great!
+=======
+version: "3"
+services:
+  app:
+    container_name: node-app
+    restart: always
+    build: .
+    ports:
+      - "80:3000"
+    volumes:
+      - .:/app
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+>>>>>>> 303da26437240177fd3bb5ba48815a2f24e43981

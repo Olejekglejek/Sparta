@@ -49,11 +49,13 @@ Linux® containers and virtual machines (VMs) are packaged computing environment
 - `docker run hello-world`
 - `docker pull NAME-OF-IMAGE`
 - `docker run NAME-OF-IMAGE` (it will download images from the public registry if not already present)
-- run on ports `docker run -d -p 88:80 NAME-OF-IMAGE`
+- run on ports `docker run -it -d -p 88:80 NAME-OF-IMAGE`
 - delete image `docker rmi NAME-OF-IMAGE` or `docker rmi NAME-OF-IMAGE -f`
 - checking running containers `docker ps`
-- go into container `docker exec -it CONTAINER-ID`
+- go into container `docker exec -it CONTAINER-ID bash`
 - move/copy files between host and container `docker cp /source/file/path.txt CONTAINER:/dest/file/path/.txt`
+- build docker image
+  `docker build -t test .`
 
 #### Building customised images, microservices
 
@@ -92,3 +94,17 @@ Linux® containers and virtual machines (VMs) are packaged computing environment
 - Test and autocorrection of applications
 
 ![](./assets/Docker-Kubernetes-together.png)
+
+### Automate the build steps of our customised image
+
+Using Dockerfile with set of instruction
+
+- Naming convention to create Dockerfile is `Dockerfile`
+- `docker run -d -p 4000:4000 docs/docker.github.io` download all documentation
+
+```FROM nginx
+LABEL maintainer="negrutaoleg@gmail.com"
+COPY ./app1 /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
