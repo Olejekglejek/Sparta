@@ -287,3 +287,4 @@ FOLLOW THE STEPS THAT WE DID BEFORE IN AWS:
 3. CREATE AN INSTANCE AND ASSIGN TO THE SUBNET
 
 ![](./assets/scaling.jpeg)
+![](./assets/user-scaling.png)

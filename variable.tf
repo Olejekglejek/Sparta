@@ -16,9 +16,19 @@ variable "webapp_ami_id" {
   default = "ami-0f79ddc3f7a4cee74"
 }
 
-variable "aws_subnet" {
+variable "db_ami_id" {
 
-  default = "terraform_code_testing_with_subnet_var"
+  default = "ami-0824ad0deafb692a5"
+}
+
+variable "aws_subnet_pub" {
+
+  default = "terraform_with_pub_subnet"
+}
+
+variable "aws_subnet_priv" {
+
+  default = "terraform_with_priv_subnet"
 }
 
 variable "aws_key_name" {
@@ -47,6 +57,10 @@ variable "webapp_name" {
   default = "Eng84_oleg_terraform_webapp_auto"
 }
 
+variable "db_name" {
+  default = "Eng84_oleg_terraform_db_auto"
+}
+
 variable "my_ip" {
   default = "81.107.194.131/32"
 }
@@ -56,4 +70,8 @@ variable "vpc_cidr" {
 }
 variable "igw_name" {
   default = "Eng84_oleg_terraform_igw"
+}
+
+variable "db_ip" {
+  default = "10.0.2.122"
 }
