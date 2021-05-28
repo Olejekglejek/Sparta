@@ -164,5 +164,14 @@ scp -i ~/.ssh/DevOpsStudent.pem /home/johndoe/Desktop/app ubuntu@10.10.110.1:/ho
 2. Clone the repo into your cloud instance using _http_ protocol
 
 `git clone https://github.com/johndoe/online_repo.git`
-
+```
 sudo echo "export DB_HOST=mongodb://db_private_ip:27017/posts" >> ~/.bashrc
+
+sudo echo "export DB_HOST=mongodb://10.0.2.122:27017/posts" >> ~/.bashrc 
+
+echo export DB_HOST="mongodb://10.0.2.122:27017/posts" | sudo tee -a /etc/profile
+. /etc/profile
+
+sudo -E npm install
+sudo -E pm2 start app.js
+```

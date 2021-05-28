@@ -137,6 +137,7 @@ link to check permissions
 - how to check Hidden Files and Directories
   `ls -a`
 - The Manual, Flags
+- `man cmd` - Manual of the command
 - what is a wildecards and How to use Wildcards
 
 Wildcards (also referred to as meta characters) are symbols or special characters that represent other characters. You can use them with any command such as ls command or rm command to list or remove files matching a given criteria, receptively.
@@ -165,14 +166,40 @@ You can also kill a process that has been running for a certain period of time w
 
 `killall -o 30m <process-name>`
 
-- how to check any process running in Foreground and Background Jobs
-- how to stop/kill any process running in Foreground and Background Jobs
-- How to change permissions with chmod command
-- how to check permission for files/dir
-- what does 777, 400, 600, r,w,e
-- how to use head, tail, sort, nl (number line), wc (word count)
-- what is pipping and redirection, HINT > indicates to the command line
-- what is STDIN standard input and output
+- `apt (install | remove)` - Package manager
+- `mkdir` - Make folder
+- `ls (-a)` - list files, -a shows all files
+- `nano` - text editor
+- `touch` - makefile
+- `cd` .. - up a dir
+- `pwd` - print working directory
+- `mv` - move also used to rename
+- `cp` - copy
+- `rm` - remove
+- `ll` - check permissions
+- `chmod (+rwx | -rwx)` - change permissions
+  - `+ | -` - add or remove permission
+  - `r` - read permission
+  - `w` - write permission
+  - `x` - execute permission
+  - `777` - read, write and execute for everyone
+  - `400` - same as 777 but only for the issuing user
+  - `600` - same as 777 but only for the file owner and restricts all others
+- `top` - task manager
+- `kill pid` - Kills a process based on its pid
+- `sudo systemctl (status | start | stop | restart)` - Manage background services
+- Wildcards:
+  - `*` - All files
+  - `.` - Current folder
+  - `..` - Up one folder
+- `head` - prints first 10 lines of a file
+- `tail` - prints last 10 lines of a file
+- `sort` - sorts information in a file
+- `nl` - prints a file with numbered lines
+- `wc` - print out a word count
+- `cmd 1 | cmd 2` - Use command 1 and use that output as input for command 2
+- `cmd > file` - redirect output into a file and overwrite the contents
+- `cmd >> file` - redirect output into a file and append it to the end
 
 # Bastion Server Lab - Jump Box
 
@@ -195,6 +222,12 @@ To solve this we need to create a bastion server, also known as a jump box so th
 - Create a security group that only allows access on port 22 from your IP
 - Create a security group called bastion-access that only allows ssh access from the bastion group
 - SSH to your bastion server and from there SSH to your database instance
+
+A **bastion host/bastion server** is a special-purpose computer on a network specifically designed and configured to withstand attacks. The computer generally hosts a single application, for example a proxy server, and all other services are removed or limited to reduce the threat to the computer. It is hardened in this manner primarily due to its location and purpose, which is either on the outside of a firewall or inside of a demilitarized zone (DMZ) and usually involves access from untrusted networks or computers.
+
+In an **Amazon Web Services (AWS)** context, a bastion host is defined as "a server whose purpose is to provide access to a private network from an external network, such as the Internet. Because of its exposure to potential attack, a bastion host must minimize the chances of penetration".
+
+Another AWS-related definition is that bastion hosts are EC2 instances within a public subnet that is accessed via SSH (for Linux) and RDP (for Microsoft Windows). Once remote connectivity is established with the bastion host, "it then acts as a "jump" server, allowing you to use SSH or RDP" to log in to other EC2 instances within private subnets. It is important to configure them via security groups and network access control lists (NACLs) to act as a "bastion"; if so, it will act as "a bridge to your private instances via the internet".
 
 ### What is S3
 
