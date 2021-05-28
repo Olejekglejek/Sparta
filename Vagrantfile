@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     app.vm.synced_folder ".", "/home/vagrant/app/"
     app.vm.provision "shell", path: "environment/app/provision.sh", privileged: false
     #env variable
-    app.vm.provision "shell", inline: 'sudo echo "export DB_HOST=mongodb://192.168.10.101:27017/posts" >> /etc/profile.d/myvars.sh', run: "always"
+    app.vm.provision "shell", inline: 'sudo echo "export DB_HOST=mongodb://192.168.10.101:27017/posts" >> ~/.bashrc', run: "always"
   end
   config.vm.define "db" do |db|
     db.vm.box = "ubuntu/xenial64"

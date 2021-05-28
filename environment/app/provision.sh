@@ -43,6 +43,8 @@ sudo echo "server {
 
 sudo systemctl restart nginx
 
+# add npm install for all the dependenccies and also add dotenv for package.json
+
 
 
 

@@ -283,3 +283,5 @@ If you have started your app and you can see it running on dev.local ( without t
 You only need to edit one configuration file to do this.
 
 Once you've completed this task, amend your provisioning script for your app VM so that it installs nginx and does the necessary configuration. Make sure you recreate your VM from scratch and run this provisioning script in order to test it works properly.
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
