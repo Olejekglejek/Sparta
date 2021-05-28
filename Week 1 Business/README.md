@@ -6,12 +6,12 @@
 
 Hello, My name is Oleg
 
-I am a graduate electrical engineer. Have a big passion for tech, guitars, and sports.Used to lead teams, and like to teach skills at which I am good at. Love traveling did a lot of volunteering activities, started Pascal programming from when I was 12 or 15.
+I am a graduate electrical engineer. Have a big passion for tech, guitars, and sports.Used to lead sport teams and profesional as well and like to teach skills at which I am good at. Love traveling, been in more then 10 countries and planing to double that number in the next years, did a lot of volunteering activities mostly in the high school period, started Pascal programming from when I was 12 or 15.
 I pursued a university with a network background, a lot of things from electronics, programming, to AI, data analysis.
 
 A few things from my university which I would like to highlight more and which I am proud of most are my success in winning the Erasmus scholarship 4 times which gave me the opportunity to combine my studies at several international universities from Finland, France, Scotland which I can describe as the best part of my life that had a great impact on my personality.
-The other important factor was my internship and work placements as a Junior Industrial Engineer at 2 manufacturing companies. It helped me to integrate into the professional environment. Ive also successfully self tought myself fullstack dev and got a job as a Mobile App Dev which I am really really proud of.
-And one more thing that I want to point is my final thesis. Where I managed to apply all my knowledge to build a surveillance system with AI features, which I learnd outside of my curriculum.
+The other important factor was my internship and work placements as a Junior Industrial Engineer at 2 manufacturing companies. It helped me to integrate into the professional environment.
+Ive also successfully self tought myself fullstack dev and got a job as a Mobile App Dev which I am really really proud of.
 
 Here at Sparta I choose DevOps, I find it the best option for me because it combines everything I had a chance to work with, its very vesatile, lots of technology constantly changing career.
 This will help to achieve my target which is land and grow a succesfull career in IT.
@@ -28,8 +28,10 @@ My main goal is to be very successful and to gain a lot of professional experien
 
 4. **Weaknesses**
 
-In the past I to have an unwanted sense of a perfectionist. For example, sometimes I spend too much time making things right, to follow all the rules and conventions. I could get coath up in any of my activities, for example, the implementation of the code, design, and efficiency, or maybe when I learn something new and get lost in time. I said unwanted because sometimes it's worth looking at the bigger picture.
-It's not a big issue anymore because of my passion for psychology and human behavior. So I like to learn how our brain is designed and why certain things happen and also the tools how to overcome or prevent this. Tools like the Pareto Principle, Pomodoro technique, and all sorts of methods helped me to do most of the job with less effort and time and only later focus on details. It helped me to be more efficient, by managing my time and also more self-confident in my decisions and careful when I plan things for the future.
+In the past I to speend too much time making things perfect, following all the rules and conventions, focusing too much on the details. Got coathed up too much in any of my activities.
+I started to research more on this topic and it led me to a passion which is psychology and human behavior.
+In my research I found tools like the Pareto Principle, Pomodoro technique, and all sorts of methods helped me to do most of the job with less effort and time and only later focus on details.
+It helped me to be more efficient, by managing my time and also more self-confident in my decisions and careful when I plan things for the future.
 
 5. **Strengths**
 
@@ -47,7 +49,9 @@ In my final thesis, I've built a Surveillance system base on artificial intellig
 
 Add my strengths, my work exprience in manufacturing, team engagement. Very determinant, not giving up, disciplined.
 
-At my previous company, I felt comfortable working under pressure, to pick up new skills in a short period of time which allowed me to deliver my job on time and being able to work and improve my work based on the feedback received. I can help the company by using my strengths and also help others to achieve their own goals and requirements they have to meet. I know I can be valuable support with fresh innovation and always eager to learn and share my experience.
+comfortable working under pressure, to pick up new skills in a short period of time which allowed me to deliver my job on time and being able to work and improve my work based on the feedback received.
+help others to achieve their own goals and requirements they have to meet.
+I know I can be valuable support with fresh innovation and always eager to learn and share my experience.
 
 8. **What are 3 areas of improvement for you?**
 
@@ -63,14 +67,14 @@ That's why I join companies like Sparta Global, attend meetups where I can follo
 
 1. **What is Agile and the benefit of implementing it?**
 
-Agile is a set of values and principles which help the development team to think and interact in ways to achieve the ability to continuously adapt and constantly make improvements to the way we work.
+Agile is a set of values and principles which help the development team to continuously adapt and constantly make improvements to the way we work.
 
 Teams choose agile so they can respond to changes in the marketplace or feedback from customers quickly. Just enough planning and shipping in small, frequent increments lets the team gather feedback on each change and integrate it into future plans at a minimal cost.
 
-It came as a necessity to replace the Waterfall methodology which was not suitable anymore for large and complex projects.
+It came as a necessity to replace the **Waterfall** methodology which was not suitable anymore for large and complex projects.
 Agile includes frameworks like Scrum, Extreme programming, Kanban, etc.
 
-It has 4 values that prioritize Individuals and interaction, Working Software, Customer Collaboration, Responsiveness to change rather than Processes and Tools, Comprehensive documentation, Contract Negotiation, and strict plan.
+It has 4 values that prioritize **Individuals and interaction, Working Software, Customer Collaboration, Responsiveness to change rather than Processes and Tools, Comprehensive documentation, Contract Negotiation, and strict plan**.
 
 2. **What is SCRUM and the benefit of implementing it?**
 
@@ -86,11 +90,9 @@ Combined with 3 artifacts which are product backlog, sprint backlog, and increme
 
 DevOps is an software development methodology that combines software development (Dev) with IT operations (Ops) participating together in the entire service life-cycle, from design through the development process to production, it is a set of practices that automate the processes between software development and IT teams, in order that they can build, test, and release software faster.
 
-DevOps embraces the fast paced development of the programming team while keeping the stability of operation team, with the use of automated tools, CI/CD pipelines, infrastructure as code and many other tools. In this fashion, time, money and effort is no longer wasted by trying to integrate the two groups.
-
 4. **Why do you want to become a DevOps Engineer/Consultant?**
 
-I am very passionate about tech and all the different parts of it. Along my journey, I had focused my attention on networks, cybersecurity, and programming. I am also a true fan of Linux and I find that DevOps combines all these parts together. I want to keep on improving these set of skills and DevOps gives me the opportunity to merge all of them and practice them together.
+I am very passionate about tech and all the different parts of it. Along my journey, I had focused my attention on networks, cybersecurity, and programming. I am also a true fan of Linux and I find that DevOps combines all these parts together. I want to keep on improving these set of skills and DevOps gives me the opportunity to merge all of them and practice them together. Because DevOps is so broad, depending on the oportunities ill have i would choose a path with more cybersecurity, networking or programing.
 
 5. **Explain the role of a DevOps Engineer/Consultant**
 
