@@ -18,8 +18,9 @@ sudo apt-get install nodejs -y
 # install npm
 sudo apt-get install npm
 
-# install npm with pm2
-sudo npm install -g pm2
+# install npm with pm2 v3 for node v6
+sudo npm install pm2@^3 -g
+
 
 # Install app packages
 sudo npm install app/app
