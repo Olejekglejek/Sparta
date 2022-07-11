@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+spec:
+  type: NodePort
+  externalTrafficPolicy: Cluster
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/component: controller
+
+  ports:
+  - name: http
+    nodePort: 30080 # You can choose your own port!
+    port: 80
+    targetPort: http
+    protocol: TCP

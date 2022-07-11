@@ -1,0 +1,12 @@
+
+# Terraform files
+.terraform*
+*.tfstate*
+
+# Python files
+__pycache__
+.python-version
+
+# Credentials
+node-token
+*.pem
