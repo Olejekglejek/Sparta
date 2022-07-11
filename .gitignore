@@ -1,0 +1,9 @@
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+./Terraform_Autoscaling/.terraform
+./Terraform_Autoscaling/.terraform.lock.hcl
+./Terraform_Autoscaling/terraform.tfstate
+./Terraform_Autoscaling/terraform.tfstate.backup
